@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yuloong.xin">
-  <title>loong</title>
+  <title>vue-router使用记录 | loong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="loong">
-<meta property="og:url" content="http://yuloong.xin/index.html">
+  <meta name="description" content="vue-router 路由守卫当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子，注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行的，之前是一直没理解这里，以为是执行next(‘/home’)后就会直接跳到home页面呢，当重新触发后就会继续执">
+<meta name="keywords" content="vue 前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-router使用记录">
+<meta property="og:url" content="http://yuloong.xin/2018/09/29/vue-router使用记录/index.html">
 <meta property="og:site_name" content="loong">
-<meta property="og:description" content="description">
+<meta property="og:description" content="vue-router 路由守卫当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子，注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行的，之前是一直没理解这里，以为是执行next(‘/home’)后就会直接跳到home页面呢，当重新触发后就会继续执">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-29T01:37:48.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="loong">
-<meta name="twitter:description" content="description">
+<meta name="twitter:title" content="vue-router使用记录">
+<meta name="twitter:description" content="vue-router 路由守卫当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子，注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行的，之前是一直没理解这里，以为是执行next(‘/home’)后就会直接跳到home页面呢，当重新触发后就会继续执">
   
     <link rel="alternative" href="/atom.xml" title="loong" type="application/atom+xml">
   
@@ -151,96 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-hexo-yilia" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-vue-router使用记录" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/29/hexo-yilia/">hexo使用过程中的走过的坑</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/29/hexo-yilia/" class="archive-article-date">
-  	<time datetime="2018-09-29T02:18:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="yilia-json-content-错误"><a href="#yilia-json-content-错误" class="headerlink" title="yilia json-content 错误"></a>yilia json-content 错误</h3><p><img src="/2018/09/29/hexo-yilia/jsoncontent.png" alt="zz"><br>在一开始使用yilia 配置的时候 提示模块缺失</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
-<p>但是并不能解决问题啊！</p>
-<p>后来在yilia github-issues 上看到 安装2.*的版本就好了</p>
-<p>于是。。。</p>
-<p>package.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;hexo-generator-json-content&quot;: &quot;2.2.0&quot;,</span><br></pre></td></tr></table></figure></p>
-<p>再重新npm i ，解决！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/29/hexo-yilia/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-router使用记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/29/vue-router使用记录/">vue-router使用记录</a>
+    <h1 class="article-title" itemprop="name">
+      vue-router使用记录
     </h1>
   
 
@@ -257,6 +177,27 @@
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -276,16 +217,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/29/vue-router使用记录/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yuloong.xin/2018/09/29/vue-router使用记录/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/09/29/hexo-yilia/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          hexo使用过程中的走过的坑
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/28/新的开始/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">新的开始</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -305,82 +314,14 @@
 
 
 
-
   
-    <article id="post-新的开始" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/28/新的开始/">新的开始</a>
-    </h1>
   
 
-        
-        <a href="/2018/09/28/新的开始/" class="archive-article-date">
-  	<time datetime="2018-09-28T09:57:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="思念，是一种病"><a href="#思念，是一种病" class="headerlink" title="思念，是一种病"></a>思念，是一种病</h2><p><img src="/2018/09/28/新的开始/zz.JPG" alt="zz"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/28/新的开始/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -403,8 +344,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
