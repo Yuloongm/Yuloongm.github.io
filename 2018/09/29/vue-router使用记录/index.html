@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yuloong.xin">
-  <title>vue-router使用记录 | loong</title>
+  <title>vue-router使用记录 | mark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="vue-router 路由守卫当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子，注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行的，之前是一直没理解这里，以为是执行next(‘/home’)后就会直接跳到home页面呢，当重新触发后就会继续执">
 <meta name="keywords" content="vue 前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-router使用记录">
 <meta property="og:url" content="http://yuloong.xin/2018/09/29/vue-router使用记录/index.html">
-<meta property="og:site_name" content="loong">
+<meta property="og:site_name" content="mark">
 <meta property="og:description" content="vue-router 路由守卫当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子，注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行的，之前是一直没理解这里，以为是执行next(‘/home’)后就会直接跳到home页面呢，当重新触发后就会继续执">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-09-29T01:37:48.128Z">
@@ -21,7 +21,7 @@
 <meta name="twitter:title" content="vue-router使用记录">
 <meta name="twitter:description" content="vue-router 路由守卫当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子，注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行的，之前是一直没理解这里，以为是执行next(‘/home’)后就会直接跳到home页面呢，当重新触发后就会继续执">
   
-    <link rel="alternative" href="/atom.xml" title="loong" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="mark" type="application/atom+xml">
   
   
     <link rel="icon" href="/cat.png">
@@ -51,10 +51,10 @@
 			<img src="/img/jia.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">指鹿为马</a></h1>
+		  <h1 class="header-author"><a href="/">mark</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">时间会给我答案</p>
+		<p class="header-subtitle">笑着跳进人海里</p>
 		
 
 		<nav class="header-menu">
@@ -82,13 +82,11 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/Yuloongm" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/yuloong" title="segmentfault"><i class="icon-segmentfault"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="mail" target="_blank" href="mailto:myl_41@outlook.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -109,10 +107,10 @@
 				<img src="/img/jia.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">指鹿为马</h1>
+			  <h1 class="header-author js-header-author">mark</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>时间会给我答案<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>笑着跳进人海里<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -123,13 +121,11 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/Yuloongm" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/yuloong" title="segmentfault"><i class="icon-segmentfault"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="mail" target="_blank" href="mailto:myl_41@outlook.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -325,6 +321,26 @@
 
 
   
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="vue-router使用记录" data-title="vue-router使用记录" data-url="http://yuloong.xin/2018/09/29/vue-router使用记录/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
   
   
 
@@ -342,7 +358,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 指鹿为马
+    		&copy; 2018 mark
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -425,11 +441,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue 前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue 前端</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
