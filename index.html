@@ -326,7 +326,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="vue-router-路由守卫"><a href="#vue-router-路由守卫" class="headerlink" title="vue-router 路由守卫"></a>vue-router 路由守卫</h2><p>当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子，注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行的，之前是一直没理解这里，以为是执行next(‘/home’)后就会直接跳到home页面呢，当重新触发后就会继续执行next(‘/home’)所以会一直循环。至于解决办法就是判断下，如果已经是/home了就next()</p>
+        <h2 id="vue-router-路由守卫"><a href="#vue-router-路由守卫" class="headerlink" title="vue-router 路由守卫"></a>vue-router 路由守卫</h2><p>当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，<br>比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子<br>注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行<br>之前是一直没理解这里，以为是执行next(‘/home’)后就会直接在这个钩子中跳到home页面，<br>结果是当重新触发后就会继续执行next(‘/home’)这样会一直循环。<br>至于解决办法就是判断下，如果已经是/home了就next() 不要再填任何内容。</p>
 
       
 
@@ -556,11 +556,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端 html</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue 前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue 前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端 html</a>
               </li>
              
               <li class="article-tag-list-item">
