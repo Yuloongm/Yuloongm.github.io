@@ -8,18 +8,20 @@
   <link rel="dns-prefetch" href="http://yuloong.xin">
   <title>vue-router使用记录 | Mark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue-router 路由守卫当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行之前是一直没理解这里，以为是执行next(‘/home’)后就会直接在这个钩子中跳到home页面，结果是当重新触发后">
+  <meta name="description" content="vue-router 路由守卫死循环当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行之前是一直没理解这里，以为是执行next(‘/home’)后就会直接在这个钩子中跳到home页面，结果是当重新">
 <meta name="keywords" content="vue 前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-router使用记录">
 <meta property="og:url" content="http://yuloong.xin/2018/09/29/vue-router使用记录/index.html">
 <meta property="og:site_name" content="Mark">
-<meta property="og:description" content="vue-router 路由守卫当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行之前是一直没理解这里，以为是执行next(‘/home’)后就会直接在这个钩子中跳到home页面，结果是当重新触发后">
+<meta property="og:description" content="vue-router 路由守卫死循环当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行之前是一直没理解这里，以为是执行next(‘/home’)后就会直接在这个钩子中跳到home页面，结果是当重新">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-10T09:36:46.134Z">
+<meta property="og:image" content="http://yuloong.xin/2018/09/29/vue-router使用记录/routerLogin.png">
+<meta property="og:updated_time" content="2018-10-17T10:13:43.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-router使用记录">
-<meta name="twitter:description" content="vue-router 路由守卫当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行之前是一直没理解这里，以为是执行next(‘/home’)后就会直接在这个钩子中跳到home页面，结果是当重新触发后">
+<meta name="twitter:description" content="vue-router 路由守卫死循环当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行之前是一直没理解这里，以为是执行next(‘/home’)后就会直接在这个钩子中跳到home页面，结果是当重新">
+<meta name="twitter:image" content="http://yuloong.xin/2018/09/29/vue-router使用记录/routerLogin.png">
   
     <link rel="alternative" href="/atom.xml" title="Mark" type="application/atom+xml">
   
@@ -169,7 +171,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="vue-router-路由守卫"><a href="#vue-router-路由守卫" class="headerlink" title="vue-router 路由守卫"></a>vue-router 路由守卫</h2><p>当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，<br>比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子<br>注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行<br>之前是一直没理解这里，以为是执行next(‘/home’)后就会直接在这个钩子中跳到home页面，<br>结果是当重新触发后就会继续执行next(‘/home’)这样会一直循环。<br>至于解决办法就是判断下，如果已经是/home了就next() 不要再填任何内容。</p>
+        <h2 id="vue-router-路由守卫死循环"><a href="#vue-router-路由守卫死循环" class="headerlink" title="vue-router 路由守卫死循环"></a>vue-router 路由守卫死循环</h2><p>当执行钩子函数时如果遇到next(‘/home’)等时会中断当前导航，<br>比如当前导航是去/a,那么遇到next(‘/home’)后就会把to.path改为/home，然后会重新触发这个离开的钩子<br>注意：此时会重新触发执行这个钩子，而不是在这个钩子函数继续执行<br>之前是一直没理解这里，以为是执行next(‘/home’)后就会直接在这个钩子中跳到home页面，<br>结果是当重新触发后就会继续执行next(‘/home’)这样会一直循环。<br>至于解决办法就是判断下，如果已经是/home了就next() 不要再填任何内容。</p>
+<p>上面的内容是我在segmentfault上面很早记录的，简单看下代码吧</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  if (login === true &amp;&amp; session === &apos;have&apos;) &#123; //如果登陆了 有缓存文件</span><br><span class="line">    if (to.path === &apos;/login&apos;) &#123;</span><br><span class="line">        // 如果一开始还是去login 那么就直接去首页</span><br><span class="line">      next(&#123; path: &apos;/index&apos; &#125;) // 此时 router会刷新 再从最开始往下走</span><br><span class="line"></span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // 如果不是去login 那么就继续去要去的页面</span><br><span class="line">        // 注意了：这个时候如果你再写 next(&#123; path: &apos;/index&apos; &#125;) 那么就是一个死循环了 会一直刷新页面</span><br><span class="line">      next()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; else &#123; // 如果每有登陆</span><br><span class="line">      </span><br><span class="line">    if (to.path === &apos;/login&apos;) &#123;</span><br><span class="line">        // 去登陆页面 直接next() 即可 </span><br><span class="line">        // 如果  next(&#123; path: &apos;/login&apos; &#125;) 那么又是死循环了</span><br><span class="line">      next()</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      next(&#123; path: &apos;/login&apos; &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>附图一张：</p>
+<div style="width:90%;margin:0 auto"><br><img src="/2018/09/29/vue-router使用记录/routerLogin.png" alt="routerLogin"><br></div>
 
       
 
@@ -445,15 +452,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue 前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端 html</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue 前端</a>
               </li>
             
             <div class="clearfix"></div>
